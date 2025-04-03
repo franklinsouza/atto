@@ -714,11 +714,11 @@ blockquote .quote-icon {
 }
 
 *::-webkit-scrollbar-button {
-  background-color: #dcbb87;
+  background-color: #f3751b;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #dcbb87;
+  background-color: #f3751b;
 }
 
 /*-------------------------------------------------
@@ -3537,8 +3537,8 @@ section {
 --------------------------------------------------------------*/
 .banner-section {
   position: relative;
-  padding-top: 295px;
-  padding-bottom: 235px;
+  padding-top: 100px;
+  padding-bottom: 120px;
   padding-left: 130px;
   padding-right: 130px;
   background-color: #19232d;
@@ -6147,8 +6147,8 @@ section {
   opacity: 1;
   visibility: visible;
 }
-.page-wrapper-two .feature-item:hover .feature-icon {
-  color: #f3751b;
+.page-wrapper-two .feature-item:hover .feature-icon svg {
+  fill: #f3751b;
 }
 .page-wrapper-two .feature-icon {
   font-size: 80px;
@@ -6296,7 +6296,7 @@ section {
     [ ### statistics block ]
 */
 .statistics-section {
-  background-attachment: fixed;
+  background-color: #19232d;
 }
 
 .statistics-item {
