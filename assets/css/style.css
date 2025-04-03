@@ -6767,7 +6767,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after {
   transition: all 0.5s;
 }
 .package-content .package-content-header .title a:hover {
-  color: #dcbb87;
+  color: #f3751b;
 }
 .package-content .package-list li {
   padding-bottom: 8px;
