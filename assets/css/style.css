@@ -6718,9 +6718,8 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after {
   overflow: hidden;
 }
 .package-slider .slider-next, .package-slider .slider-prev {
-  left: 50%;
-  transform: translateX(-50%);
   margin-top: 40px;
+  left: calc(50% - 44px);
 }
 
 .package-item {
