@@ -5523,6 +5523,7 @@ section {
 }
 .page-wrapper-two .about-thumb img {
   width: 100%;
+  border-radius: 8px;
 }
 .page-wrapper-two .about-thumb .about-video-wrapper {
   position: absolute;
