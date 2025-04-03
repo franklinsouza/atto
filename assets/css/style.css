@@ -3545,11 +3545,11 @@ section {
   overflow: hidden;
   z-index: 9;
 }
-@media only screen and (max-width: 1199px) {
+/* @media only screen and (max-width: 1199px) {
   .banner-section .row {
     flex-direction: column-reverse;
   }
-}
+} */
 @media only screen and (max-width: 1317px) {
   .banner-section {
     padding-top: 90px;
