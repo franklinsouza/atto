@@ -3573,19 +3573,16 @@ section {
   bottom: -233px;
   left: 16px;
   width: 100%;
-  animation: scale 4s linear;
+  animation: scale 1.3s linear;
   z-index: 9;
 }
-/* .banner-section .banner-thumb img {
+.banner-section .banner-thumb img {
   animation: ImgAnimate 3s infinite cubic-bezier(0.4, 0, 1, 1) 0.2s;
-  width: 100%;
-} */
+  /* width: 100%; */
+}
 @media only screen and (max-width: 1199px) {
   .banner-section .banner-thumb {
     position: unset;
-    animation: none;
-  }
-  .banner-section .banner-thumb img {
     animation: none;
   }
 }
