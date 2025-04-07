@@ -5,28 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade</title>
     <script>
-        // Função para iniciar o download do PDF automaticamente
         function baixarPDF() {
-            // URL do PDF (ajuste o caminho conforme necessário)
-            const urlPDF = './policita_de_privacidade.pdf';
+            const urlPDF = 'politicadeprivacidade/policita_de_privacidade.pdf';
 
-            // Cria um elemento <a> dinamicamente
             const link = document.createElement('a');
             link.href = urlPDF;
-            link.download = 'politica_de_privacidade.pdf'; // Nome do arquivo ao ser baixado
+            link.download = 'politica_de_privacidade.pdf'; 
 
-            // Adiciona o link ao corpo do documento (não visível)
             document.body.appendChild(link);
 
-            // Simula o clique no link para iniciar o download
             link.click();
 
-            // Remove o link do documento após o download
             //document.body.removeChild(link);
             window.location.href = '/';
         }
-
-        // Chama a função quando a página for carregada
+        
         window.onload = baixarPDF;
     </script>
 </head>
