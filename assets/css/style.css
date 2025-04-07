@@ -4282,6 +4282,7 @@ section {
 .footer-section .by span {
   color: white;
   font-size: 13px;
+  opacity: 0.8;
 }
 
 .footer-top-area {
@@ -4437,6 +4438,7 @@ section {
   font-weight: 600;
   margin-bottom: 0;
   color: #dfdfdf;
+  opacity: .8;
 }
 @media only screen and (max-width: 991px) {
   .copyright-area p {
