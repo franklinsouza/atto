@@ -3535,6 +3535,9 @@ section {
     [ ## Introduction ]
 --------------------------------------------------------------*/
 .banner-section {
+  background-image: url("../../assets/images/bg-hero.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   padding-top: 100px;
   padding-bottom: 120px;
@@ -3544,11 +3547,32 @@ section {
   overflow: hidden;
   z-index: 9;
 }
-/* @media only screen and (max-width: 1199px) {
-  .banner-section .row {
-    flex-direction: column-reverse;
+.banner-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #19232d;
+  opacity: .8;
+  z-index: 1;  
+  display: none;
+}
+.banner-section .banner-element-two,
+.banner-section .banner-element-three,
+.banner-section .banner-element-four {
+  z-index: 2;
+}
+
+@media only screen and (max-width: 991px) {
+  .banner-section {
+    background-position: 60% 0px;
   }
-} */
+  .banner-section::after {
+    display: block;
+  }
+}
 @media only screen and (max-width: 1317px) {
   .banner-section {
     padding-top: 90px;
