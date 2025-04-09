@@ -55,6 +55,47 @@ $('.package-video > a').lightcase();
 //   }
 // });
 
+
+// Form
+$("form button[type='submit']").on("click", function(){
+  console.log('teste');
+  var form = $(this).closest("form");
+  var nameField = $('#form-contact-name');
+  var emailField = $('#form-contact-email');
+  var whatsField = $('#form-contact-whats');
+
+  var status = $('.status');
+  var loading = $('.loading');
+  var button = $(this);
+
+  form.validate({
+      messages: {
+          name: "O campo Nome é obrigatório.",
+          email: "O campo E-mail é obrigatório.",
+          whatsapp: "O campo Whatsapp é obrigatório"
+      },
+      submitHandler: function() {
+          button.hide();
+          loading.show();
+          status.html('');
+
+          $.post("./assets/php/email.php", form.serialize(),  function(response) {
+              status.append(response);
+              //form.addClass("submitted");
+
+              nameField.val('');
+              emailField.val('');
+              whatsField.val('');
+
+              loading.hide();
+              button.show();
+          });
+
+          return false;
+      }
+  });
+});
+
 // navbar-click
 $(".navbar li a").on("click", function () {
   var element = $(this).parent("li");

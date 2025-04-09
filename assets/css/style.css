@@ -8744,6 +8744,13 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after {
 .account-form input::placeholder {
   color: rgba(61, 61, 61, 0.7);
 }
+.account-form input.error {
+  border: 2px solid #ff5858;
+  background-color: #ffc4c4;
+}
+.account-form label.error{
+  color: #FFF;
+}
 .account-form p {
   font-size: 15px;
   font-weight: 700;
