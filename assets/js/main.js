@@ -57,8 +57,10 @@ $('.package-video > a').lightcase();
 
 
 // Form
+
+$('#form-contact-whats').mask('(00) 00000-0000');
+
 $("form button[type='submit']").on("click", function(){
-  console.log('teste');
   var form = $(this).closest("form");
   var nameField = $('#form-contact-name');
   var emailField = $('#form-contact-email');
@@ -74,22 +76,50 @@ $("form button[type='submit']").on("click", function(){
           email: "O campo E-mail é obrigatório.",
           whatsapp: "O campo Whatsapp é obrigatório"
       },
-      submitHandler: function() {
+      submitHandler: async function() {
           button.hide();
           loading.show();
           status.html('');
 
-          $.post("./assets/php/email.php", form.serialize(),  function(response) {
-              status.append(response);
-              //form.addClass("submitted");
+          try{
+              const options = {
+                method: 'POST',
+                headers: {
+                  accept: 'application/json', 
+                  token: '6443f007bb85af27851a97cea606c942ef08b46d', 
+                  'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                  nome: nameField.val(), 
+                  email: emailField.val(), 
+                  telefone: whatsField.val(),
+                  origem: 'SI',
+                })
+              };
+              
+              console.log(options.body);
 
-              nameField.val('');
-              emailField.val('');
-              whatsField.val('');
+              const response = await fetch('https://integracao.cvcrm.com.br/api/cvio/lead', options);
+              const data = await response.json();
 
-              loading.hide();
-              button.show();
-          });
+              console.log(data);
+
+              if(data.sucesso){
+                nameField.val('');
+                emailField.val('');
+                whatsField.val('');
+
+                status.html('<span style="color: #78dd81;">Mensagem enviada com sucesso!</span>');
+              }else{
+                status.html('<span style="color: #ffc4c4;">Houve um erro ao enviar a mensagem.</span>');
+              }
+          }catch(err){
+            console.error(err);
+            status.html('<span style="color: #ffc4c4;">Houve um erro ao enviar a mensagem.</span>');
+          }
+
+          loading.hide();
+          button.show();
 
           return false;
       }
