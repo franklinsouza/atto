@@ -96,13 +96,9 @@ $("form button[type='submit']").on("click", function(){
                   origem: 'SI',
                 })
               };
-              
-              console.log(options.body);
 
-              const response = await fetch('https://integracao.cvcrm.com.br/api/cvio/lead', options);
+              const response = await fetch(' https://lourencoedias.cvcrm.com.br/api/cvio/lead', options);
               const data = await response.json();
-
-              console.log(data);
 
               if(data.sucesso){
                 nameField.val('');
